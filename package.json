@@ -1,0 +1,35 @@
+{
+  "name": "tensor-product",
+  "version": "0.1.0",
+  "description": "Compute product of tensors",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js | ./node_modules/tap-min/bin/tap-min"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fibo/tensor-product.git"
+  },
+  "keywords": [
+    "array",
+    "index"
+  ],
+  "author": "",
+  "license": [
+    {
+      "type": "MIT",
+      "url": "http://g14n.info/mit-license"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/fibo/tensor-product/issues"
+  },
+  "homepage": "https://github.com/fibo/tensor-product",
+  "devDependencies": {
+    "tap-min": "^1.0.0",
+    "tape": "^4.2.0"
+  },
+  "dependencies": {
+    "multidim-array-index": "^0.1.1"
+  }
+}
