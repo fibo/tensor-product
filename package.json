@@ -1,10 +1,19 @@
 {
   "name": "tensor-product",
-  "version": "0.1.0",
   "description": "Compute product of tensors",
+  "version": "0.1.0",
+  "homepage": "https://github.com/fibo/tensor-product",
+  "author": {
+    "name": "Gianluca Casati",
+    "url": "http://g14n.info"
+  },
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js | ./node_modules/tap-min/bin/tap-min"
+    "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
+    "standard": "standard *.js",
+    "tap": "node test.js | ./node_modules/tap-min/bin/tap-min",
+    "test": "npm run standard && npm run tap"
   },
   "repository": {
     "type": "git",
@@ -14,18 +23,11 @@
     "array",
     "index"
   ],
-  "author": "",
-  "license": [
-    {
-      "type": "MIT",
-      "url": "http://g14n.info/mit-license"
-    }
-  ],
   "bugs": {
     "url": "https://github.com/fibo/tensor-product/issues"
   },
-  "homepage": "https://github.com/fibo/tensor-product",
   "devDependencies": {
+    "standard": "^5.4.1",
     "tap-min": "^1.0.0",
     "tape": "^4.2.0"
   },

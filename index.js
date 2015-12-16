@@ -1,51 +1,26 @@
-
-var multiDimArrayIndex = require('multidim-array-index')
-
-/**
- * Compute all combinations of indices
- *
- * [2, 3] => [
- *             [0, 0],
- *             [1, 0],
- *             [0, 1],
- *             [1, 1],
- *             [0, 2],
- *             [1, 2]
- *           ]
- */
-
-function allIndices (dimensions) {
-  var indices = [[]]
-
-  for (var i in dimensions) {
-    for (var j in dimensions[i])
-      // TODO this is tricky :P
-  }
-
-  return indices
-}
+// var multiDimArrayIndex = require('multidim-array-index')
 
 /**
- * Compute product of tensors
+ * Computes product of tensors
  *
  *
  * @param {Function} multiplication
- * @param {Array} rightData
- * @param {Array} rightDim
- * @param {Array} leftData
  * @param {Array} leftDim
+ * @param {Array} rightDim
+ * @param {Array} rightData
+ * @param {Array} leftData
  *
  * @returns {Array} tensorData
  */
 
-function tensorProduct (multiplication, rightData, rightDim, leftData, leftDim) {
+function tensorProduct (multiplication, rightDim, leftDim, rightData, leftData) {
   var tensorData = []
 
-  var leftIndex  = multiDimArrayIndex.bind(null, leftDim),
-      rightIndex = multiDimArrayIndex.bind(null, rightDim)
+  if (rightDim[0] === 1 && leftDim[0] === 1) {
+    tensorData.push(multiplication(leftData[0], rightData[0]))
+  }
 
   return tensorData
 }
 
 module.exports = tensorProduct
-
