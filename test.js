@@ -31,7 +31,20 @@ test('[2] x [2]', function (t) {
      6, 8])
 })
 
-test('[1] x [2, 2]'/*, function (t) {
+test('[2, 2] x [1]', function (t) {
+  t.plan(1)
+
+  var product_2_2x1 = product.bind(null, [2, 2], [1])
+
+  t.deepEqual(product_2_2x1(
+    [1, 2,
+     3, 4],
+    [2]),
+    [2, 4,
+     6, 8])
+})
+
+test('[1] x [2, 2]', function (t) {
   t.plan(1)
 
   var product_1x2_2 = product.bind(null, [1], [2, 2])
@@ -41,4 +54,4 @@ test('[1] x [2, 2]'/*, function (t) {
      3, 4]),
     [2, 4,
      6, 8])
-}*/)
+})

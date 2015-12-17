@@ -15,7 +15,7 @@ function permutationsWithRepetitions (previousValue, currentValue, currentIndex,
       arrayWithoutLastElement.push(array[j])
     }
 
-    var previousIteration = arrayWithoutLastElement.reduce(permutationsWithRepetitions)
+    var previousIteration = arrayWithoutLastElement.reduce(permutationsWithRepetitions, [])
 
     for (var l = 0; l < previousIteration.length; l++) {
       for (var k = 0; k < currentValue; k++) {
@@ -42,7 +42,6 @@ function permutationsWithRepetitions (previousValue, currentValue, currentIndex,
 
 function tensorProduct (multiplication, leftDim, rightDim, leftData, rightData) {
   var tensorData = []
-  var tensorDim = leftDim.concat(rightDim)
 
   leftDim
     .reduce(permutationsWithRepetitions, [])
@@ -54,10 +53,7 @@ function tensorProduct (multiplication, leftDim, rightDim, leftData, rightData) 
         .forEach(function (rightCombination) {
           var j = multiDimArrayIndex(rightDim, rightCombination)
 
-          var indexCombination = leftCombination.concat(rightCombination)
-          var k = multiDimArrayIndex(tensorDim, indexCombination)
-
-          tensorData[k] = multiplication(leftData[i], rightData[j])
+          tensorData.push(multiplication(leftData[i], rightData[j]))
         })
     })
 
