@@ -1,7 +1,7 @@
 {
   "name": "tensor-product",
   "description": "Compute product of tensors",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "homepage": "https://github.com/fibo/tensor-product",
   "author": {
     "name": "Gianluca Casati",
@@ -31,6 +31,7 @@
     "tape": "^4.2.0"
   },
   "dependencies": {
+    "indices-permutations": "^0.1.0",
     "multidim-array-index": "^0.1.1"
   }
 }
