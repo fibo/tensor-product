@@ -45,6 +45,18 @@ var product_1x2_2 = product.bind(null, [1], [2, 2])
 
 product_1x2_2([2], [1, 2,  // [2, 4,
                     3, 4]) //  6, 8]
+
+// [2, 2] x [2, 2]
+
+var product_2_2x2_2 = product.bind(null, [2, 2], [2, 2])
+
+product_2_2x2_2([2, 2,
+                 2, 2], [1, 2,
+                         3, 4]) // [2, 2,
+                                //  2, 2, 4, 4,
+                                //        4, 4, 6, 6,
+                                //              6, 6, 8, 8,
+                                //                    8, 8]
 ```
 
   [1]: (https://en.wikipedia.org/wiki/Tensor_product#Product_of_tensors) "Product of tensors"
