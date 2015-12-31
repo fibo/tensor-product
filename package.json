@@ -1,6 +1,6 @@
 {
   "name": "tensor-product",
-  "description": "Compute product of tensors",
+  "description": "computes the product of tensors",
   "version": "0.1.0",
   "homepage": "https://github.com/fibo/tensor-product",
   "author": {
@@ -11,27 +11,26 @@
   "main": "index.js",
   "scripts": {
     "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
-    "standard": "standard *.js",
-    "tap": "node test.js | ./node_modules/tap-min/bin/tap-min",
-    "test": "npm run standard && npm run tap"
+    "lint": "standard",
+    "test": "tape test.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/fibo/tensor-product.git"
   },
   "keywords": [
-    "array",
-    "index"
+    "math",
+    "tensor"
   ],
   "bugs": {
     "url": "https://github.com/fibo/tensor-product/issues"
   },
   "devDependencies": {
-    "tap-min": "^1.0.0",
-    "tape": "^4.2.0"
+    "standard": "^5.4.1",
+    "tape": "^4.3.0"
   },
   "dependencies": {
-    "indices-permutations": "^0.1.0",
-    "multidim-array-index": "^0.1.1"
+    "indices-permutations": "^0.2.0",
+    "multidim-array-index": "^0.2.0"
   }
 }

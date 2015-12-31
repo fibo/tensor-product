@@ -5,7 +5,7 @@ function multiplication (a, b) { return a * b }
 
 var product = tensorProduct.bind(null, multiplication)
 
-test('[1] x [1]', function (t) {
+test('scalar x scalar', function (t) {
   t.plan(1)
 
   var product_1x1 = product.bind(null, [1], [1])
@@ -13,7 +13,7 @@ test('[1] x [1]', function (t) {
   t.deepEqual(product_1x1([2], [3]), [6])
 })
 
-test('[1] x [2]', function (t) {
+test('scalar x vector', function (t) {
   t.plan(1)
 
   var product_1x2 = product.bind(null, [1], [2])
@@ -21,7 +21,7 @@ test('[1] x [2]', function (t) {
   t.deepEqual(product_1x2([-1], [1, 2]), [-1, -2])
 })
 
-test('[2] x [2]', function (t) {
+test('vector x vector', function (t) {
   t.plan(1)
 
   var product_2x2 = product.bind(null, [2], [2])
@@ -31,7 +31,7 @@ test('[2] x [2]', function (t) {
      6, 8])
 })
 
-test('[2, 2] x [1]', function (t) {
+test('matrix x scalar', function (t) {
   t.plan(1)
 
   var product_2_2x1 = product.bind(null, [2, 2], [1])
@@ -41,7 +41,7 @@ test('[2, 2] x [1]', function (t) {
                                            6, 8])
 })
 
-test('[1] x [2, 2]', function (t) {
+test('scalar x matrix', function (t) {
   t.plan(1)
 
   var product_1x2_2 = product.bind(null, [1], [2, 2])
@@ -51,7 +51,7 @@ test('[1] x [2, 2]', function (t) {
                                            6, 8])
 })
 
-test('[2, 2] x [2, 2]', function (t) {
+test('matrix x matrix', function (t) {
   t.plan(1)
 
   var product_2_2x2_2 = product.bind(null, [2, 2], [2, 2])

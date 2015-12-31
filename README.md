@@ -4,6 +4,14 @@
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
+## Install
+
+With [npm](https://www.npmjs.com/) do
+
+```
+npm install tensor-product --save
+```
+
 ## Usage
 
 Signature is `(multiplication, leftDim, rightDim, leftData, rightData)` where
@@ -11,7 +19,9 @@ Signature is `(multiplication, leftDim, rightDim, leftData, rightData)` where
 * **leftDim** and **rightDim** are arrays that define the tensor indices set
 * **leftData** and **rightData** are arrays that define the tensor data set
 
-This functions returns the **tensorData** array.
+It returns the **tensorData** array given by the [product of tensors][1] defined by *leftData* and *rightData*.
+
+### Examples
 
 All code in the examples below is intended to be contained into a [single file](https://github.com/fibo/tensor-product/blob/master/test.js).
 
@@ -23,7 +33,7 @@ var tensorProduct = require('tensor-product')
 function multiplication (a, b) { return a * b }
 ```
 
-### [1] x [1]
+### scalar x scalar
 
 A tensor with one index that has a unique value is like a scalar.
 This case degenerate to scalar multiplication.
@@ -34,7 +44,7 @@ var product_1x1 = product.bind(null, [1], [1])
 product_1x1([2], [3]) // [6]
 ```
 
-### [1] x [2]
+### scalar x vector
 
 A tensor with one index which range is greater than one is like a vector.
 This case is like vector multiplication by a scalar.
@@ -45,7 +55,7 @@ var product_1x2 = product.bind(null, [1], [2])
 product_1x2([-1], [1, 2]) // [-1, -2]
 ```
 
-### [2] x [2]
+### vector x vector
 
 The tensor product of two vectors is a matrix.
 
@@ -56,7 +66,7 @@ product_2x2([1, 2], [3, 4]) // [3, 4,
                             //  6, 8]
 ```
 
-### [2, 2] x [1]
+### matrix x scalar
 
 A tensor with two indices is like a matrix.
 This case is like matrix multiplication by a scalar.
@@ -68,7 +78,7 @@ product_2_2x1( [1, 2,       // [2, 4,
                 3, 4], [2]) //  6, 8]
 ```
 
-### [1] x [2, 2]
+### scalar x matrix
 
 Similar to example above, but commuted.
 
@@ -79,7 +89,7 @@ product_1x2_2([2], [1, 2,  // [2, 4,
                     3, 4]) //  6, 8]
 ```
 
-### [2, 2] x [2, 2]
+### matrix x matrix
 
 A product tensor of two matrices is a tensor with four indices.
 
@@ -94,5 +104,9 @@ product_2_2x2_2([2, 2,
                                 //              6, 6, 8, 8,
                                 //                    8, 8]
 ```
+
+## License
+
+[MIT](http://g14n.info/mit-license/)
 
   [1]: (https://en.wikipedia.org/wiki/Tensor_product#Product_of_tensors) "Product of tensors"
