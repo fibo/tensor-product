@@ -109,4 +109,4 @@ product_2_2x2_2([2, 2,
 
 [MIT](http://g14n.info/mit-license/)
 
-  [1]: (https://en.wikipedia.org/wiki/Tensor_product#Product_of_tensors) "Product of tensors"
+  [1]: https://en.wikipedia.org/wiki/Tensor_product#Product_of_tensors "Product of tensors"
