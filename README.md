@@ -31,6 +31,8 @@ Let's use common real multiplication.
 var tensorProduct = require('tensor-product')
 
 function multiplication (a, b) { return a * b }
+
+var product = tensorProduct.bind(null, multiplication)
 ```
 
 ### scalar x scalar
