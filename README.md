@@ -4,6 +4,8 @@
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
+[![NPM version](https://badge.fury.io/js/tensor-product.svg)](http://badge.fury.io/js/tensor-product) [![Build Status](https://travis-ci.org/fibo/tensor-product.svg?branch=master)](https://travis-ci.org/fibo/tensor-product?branch=master) [![Dependency Status](https://gemnasium.com/fibo/tensor-product.svg)](https://gemnasium.com/fibo/tensor-product)
+
 ## Install
 
 With [npm](https://www.npmjs.com/) do
