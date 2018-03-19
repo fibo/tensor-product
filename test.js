@@ -1,3 +1,5 @@
+/* eslint-disable camelcase, indent */
+
 var tensorProduct = require('./index')
 var test = require('tape')
 
