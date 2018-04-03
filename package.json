@@ -30,6 +30,7 @@
     "test"
   ],
   "devDependencies": {
+    "dot-editorconfig": "^1.1.0",
     "pre-commit": "^1.1.2",
     "standa": "^2.0.0",
     "tape": "^4.3.0"
