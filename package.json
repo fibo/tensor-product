@@ -8,11 +8,12 @@
     "url": "http://g14n.info"
   },
   "license": "MIT",
-  "main": "index.js",
+  "main": "tensor-product.js",
   "scripts": {
+    "check-deps": "npm outdated",
     "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
     "lint": "standa",
-    "test": "tape test.js"
+    "test": "NODE_PATH=. tape test.js"
   },
   "repository": {
     "type": "git",
@@ -27,16 +28,17 @@
   },
   "pre-commit": [
     "lint",
-    "test"
+    "test",
+    "check-deps"
   ],
   "devDependencies": {
     "dot-editorconfig": "^1.1.0",
     "pre-commit": "^1.1.2",
-    "standa": "^2.0.0",
+    "standa": "^2.0.1",
     "tape": "^4.3.0"
   },
   "dependencies": {
-    "indices-permutations": "^0.2.0",
-    "multidim-array-index": "^0.5.1"
+    "indices-permutations": "^0.2.2",
+    "multidim-array-index": "^0.6.0"
   }
 }

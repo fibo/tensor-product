@@ -1,6 +1,6 @@
 /* eslint-disable camelcase, indent */
 
-var tensorProduct = require('./index')
+var tensorProduct = require('tensor-product')
 var test = require('tape')
 
 function multiplication (a, b) { return a * b }
