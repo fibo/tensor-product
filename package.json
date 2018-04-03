@@ -1,7 +1,7 @@
 {
   "name": "tensor-product",
   "description": "computes the product of tensors",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "homepage": "https://github.com/fibo/tensor-product",
   "author": {
     "name": "Gianluca Casati",
